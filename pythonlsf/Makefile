@@ -7,13 +7,12 @@
 
 CC = gcc
 #LSF_LIBDIR = /opt/platform/lsf/8.0/x86-64-sol10/lib
-PYTHON_INCLUDE = /usr/include/python2.4
 LSF_INCLUDE = $(LSF_LIBDIR)/../../include/lsf/
 
 PROJECT = _lsf.so
 OBJECTS = lsf_wrap.o
 
-CFLAGS  = -m64 -fPIC -I$(PYTHON_INCLUDE) -I$(LSF_INCLUDE)
+CFLAGS  = -m64 -fPIC -I$(LSF_INCLUDE)
 LDFLAGS = $(LSF_LIBDIR)/liblsf.a $(LSF_LIBDIR)/libbat.a $(LSF_LIBDIR)/libfairshareadjust.so $(LSF_LIBDIR)/liblsbstream.so -lc -lnsl
 
 all: $(PROJECT)
